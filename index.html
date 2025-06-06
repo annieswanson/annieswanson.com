@@ -2,7 +2,6 @@
 
 <html>
 <head>
-     <link rel="icon" type="image/x-icon" href="favicon.ico">
     
     <link rel="stylesheet" href="style.css">
    
@@ -23,15 +22,49 @@
     font-style: normal;
 }
         
-  h1 {font-family:"DIN Next LT Pro",
+  h1 {font-family:"DIN Next LT Pro", Times, serif;
             font-weight: 2000;
             font-size: 70px;
             line-height: 50px;
         }
         
+       
+        
         .right-image { 
             float: right; 
         } 
+        
+       
+.bottom-left {
+  position: absolute;
+  bottom: 48%;
+  left: 47%;
+    font-size:9px;
+}
+
+
+.top-left {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+    font-size:9px;
+}
+
+
+.top-right {
+  position: absolute;
+  top: 48%;
+  right:35% ;
+    font-size:9px;
+}
+
+
+.bottom-right {
+  position: absolute;
+  bottom: 48%;
+  right: 33%;
+    font-size:9px;
+        }
         
         /* Media query for tablets and larger screens */
 @media (min-width: 768px) {
@@ -39,13 +72,39 @@
         width: 60%;
         float: right;
     }
- 
- .image-container {
-    position: relative;
-    width: 100%;
-    max-width: 800px; /* optional, to control image size */
-    margin: 0 auto;
-  }
+    .bottom-left {
+  position: absolute;
+  bottom: 50%;
+  left: 68%;
+        font-size:14px;
+}
+
+
+.top-left {
+  position: absolute;
+  top: 40%;
+  left: 70%;
+    font-size:14px;
+}
+
+
+.top-right {
+  position: absolute;
+  top: 40%;
+  right:21% ;
+    font-size:14px;
+}
+
+
+.bottom-right {
+  position: absolute;
+  bottom: 50%;
+  right: 20%;
+    font-size:14px;
+    
+    
+}
+
     
         
     </style>
@@ -71,10 +130,10 @@
         <img src="mac.png" alt="Mac" >
         
        
-      <a href="projects.html">PROJECTS</a>
-        <a href="work.html">WORK</a>
-        <a href="art.html">ART</a>
-        <a href="stuff.html">STUFF</a>
+       <div class="bottom-left"><a href="projects.html">PROJECTS</a></div>
+        <div class="top-left"><a href="work.html">WORK</a></div>
+        <div class="top-right"><a href="art.html">ART</a></div>
+        <div class="bottom-right"><a href="stuff.html">STUFF</a></div>
      </div>
       
    
