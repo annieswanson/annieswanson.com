@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    
+    <link rel="stylesheet" href="style.css">
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="script.js"></script>
+    
+    <style>
+        
+       
+      @font-face {
+  font-family: "DIN Next LT Pro";
+  src: url("din-next-lt-pro-bold-condensed.otf") format("opentype"),
+       url("din-next-lt-pro-bold-condensed.woff2") format("woff2"),
+       url("din-next-lt-pro-bold-condensed.woff") format("woff"),
+       url("din-next-lt-pro-bold-condensed.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;  /* no scroll */
+}
+
+h1 {
+  font-family: "DIN Next LT Pro", Times, serif;
+  font-weight: 2000;
+
+  /* 🔥 responsive title so it doesn't explode on mobile */
+  font-size: clamp(42px, 8vw, 70px);
+  line-height: 0.85;
+
+  padding: 20px 24px 0 24px;
+}
+
+#titleText {
+  display: inline-block;
+  transform-origin: center;
+  will-change: transform, color, text-shadow, filter;
+}
+
+.image-chaos-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.chaos-art {
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  will-change: transform, opacity;
+  border-radius: 2px;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.32);
+}
+
+.title-chaos {
+  animation:
+    title-spin 95ms steps(2, end) 7,
+    title-wobble 65ms ease-in-out 10,
+    title-pop 75ms ease-in-out 8;
+}
+
+@keyframes title-spin {
+  0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+  25% { transform: translate(-6px, 4px) rotate(-6deg) scale(1.12) skewX(-3deg); }
+  50% { transform: translate(7px, -4px) rotate(7deg) scale(0.9) skewX(4deg); }
+  75% { transform: translate(-4px, -5px) rotate(-5deg) scale(1.14) skewX(-2deg); }
+  100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+}
+
+@keyframes title-wobble {
+  0% { letter-spacing: 0px; }
+  35% { letter-spacing: 2.4px; }
+  70% { letter-spacing: -0.4px; }
+  100% { letter-spacing: 0px; }
+}
+
+@keyframes title-pop {
+  0% { filter: blur(0) saturate(1); }
+  50% { filter: blur(0.9px) saturate(2.1) contrast(1.2); }
+  100% { filter: blur(0) saturate(1); }
+}
+
+/* container for mac + overlay links */
+.image-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: calc(100vh - 110px); /* leaves room for title */
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  padding-right: 24px;
+}
+
+section {
+  position: relative;
+  z-index: 2;
+}
+
+.mac-wrap {
+  position: relative;
+  width: max(370px, min(60vw, 700px));
+}
+
+/* mac image */
+.image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* screen overlay box, normalized from 1600x1200 source image */
+.screen {
+  position: absolute;
+
+  left: 45.75%;
+  top: 19.75%;
+  width: 23.625%;
+  height: 19.333%;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+
+  place-items: center;
+  gap: 0.2em;
+
+  font-size: min(1.45vw, 15px);
+  line-height: 1;
+  text-align: center;
+}
+
+/* links */
+.screen a {
+  color: #5a2ca0;
+  text-decoration: underline;
+  white-space: nowrap;
+}
+    
+        
+    </style>
+    
+
+    
+    </head>
+    
+ <body>
+     
+  
+    <section>
+       
+       <h1>
+       <ul>
+            <li id="titleText" style="display:inline">ANNIE SWANSON</li>
+        </ul>
+       </h1>
+        
+    </section>
+     
+   <div class="image-container">
+        <div class="mac-wrap">
+          <img id="macImage" src="mac.png" alt="Mac" >
+          <div class="screen">
+            <a href="work.html">WORK</a>
+            <a href="art.html">ART</a>
+            <a href="projects.html">PROJECTS</a>
+            <a href="stuff.html">STUFF</a>
+          </div>
+        </div>
+   </div>
+      
+  <script>
+    (function () {
+      const macImage = document.getElementById("macImage");
+      const titleText = document.getElementById("titleText");
+      if (!macImage || !titleText) return;
+
+      const artFiles = [
+        "lakeshore.jpeg", "process.png", "dusk.jpeg", "runner.jpg", "snow.jpeg", "still.jpeg",
+        "runner.png", "feu.jpeg", "mountain.jpeg", "tshirt.png", "selfie2.jpeg", "ask.jpeg",
+        "tourists.jpeg", "3flowers.png", "usacoolfacts.png", "dorm.jpg", "usacoolfacts.jpg",
+        "baby.jpg", "books.jpeg", "piano.jpeg", "og.jpg", "edem.jpeg", "pies.jpg", "pies.png",
+        "nfts.png", "wheat.jpeg", "web.png", "tree.jpeg", "profile.png", "car.jpg", "primary.png",
+        "interactive.jpeg", "barn.jpeg", "hello.png", "mc2.jpeg", "curiosities.jpg", "shoe copy.png",
+        "cup.jpg", "lolla.jpeg", "violincat.jpeg", "caitlin.jpeg", "basketball.jpeg", "aimee.jpg",
+        "indiana.jpg", "montblanc.jpeg", "friends.jpg", "essaymentor.png", "jane.jpeg", "ladder.jpg",
+        "shoe.jpg", "ladder.png", "shoe.png", "wsp.png", "sankey.jpg", "sankey.png", "demo.jpeg",
+        "demo.jpg", "lowfibag.png", "silhouette.jpeg", "mural.jpg", "edem2.jpeg", "pool.jpg",
+        "plexus.jpg", "onion.jpg", "plexus.png", "library.png", "sgw.jpg", "tom.jpeg", "forest.jpeg",
+        "selfie.jpeg", "printcup.png", "pink.jpg", "chris.jpg", "empty.jpeg", "plugin.jpg",
+        "zebra.png", "show.jpg", "fact.png", "label.png", "zebra2.png", "banma.jpg", "postscript.jpg",
+        "eyes.jpeg", "uchicago.png", "chop.jpeg", "moodboard.png", "simon.jpeg", "artists.jpeg",
+        "shoe copy 2.png", "moto.jpeg", "Muhammad.png", "natgeo.jpg", "wireframes.png", "park.jpg",
+        "colloquium.jpg", "colloquium.png", "tommy.jpeg", "3dcup.png", "italy2.jpeg", "feet.png",
+        "umbrellas.jpeg", "fist.jpg", "writestix.png", "satan.png", "m.png", "mc.jpg",
+        "brainstormbag.png", "app.png", "skydesk.jpg", "hat.png", "cars.jpeg", "prototype.png",
+        "zebra.jpeg", "code.jpg", "code.png", "preview.jpg", "wall.jpeg", "stuff.jpeg",
+        "interviews.png", "cups.jpeg", "iterations.png", "lowficup.png", "final.png", "old.jpeg",
+        "garden.jpeg", "boys.png", "journey.png", "skybath.png", "birds.jpeg"
+      ];
+
+      // Click target area on the 1600x1200 source image:
+      // x: 1200-1350, y: 990-1100
+      const hitBox = {
+        left: 1200 / 1600,
+        right: 1350 / 1600,
+        top: 990 / 1200,
+        bottom: 1100 / 1200
+      };
+
+      function isInMouseHotspot(clientX, clientY) {
+        const rect = macImage.getBoundingClientRect();
+        const x = (clientX - rect.left) / rect.width;
+        const y = (clientY - rect.top) / rect.height;
+        return (
+          x >= hitBox.left &&
+          x <= hitBox.right &&
+          y >= hitBox.top &&
+          y <= hitBox.bottom
+        );
+      }
+
+      let chaosTimer = null;
+      let artChaosTimer = null;
+
+      function pickHalfArtFiles(files) {
+        const shuffled = files.slice();
+        for (let i = shuffled.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          const temp = shuffled[i];
+          shuffled[i] = shuffled[j];
+          shuffled[j] = temp;
+        }
+        return shuffled.slice(0, Math.ceil(shuffled.length / 2));
+      }
+
+      function runTitleChaos(durationMs) {
+        if (chaosTimer) window.clearInterval(chaosTimer);
+        const chaosDuration = Math.max(120, durationMs || 520);
+
+        titleText.classList.remove("title-chaos");
+        // Restart animation reliably.
+        void titleText.offsetWidth;
+        titleText.classList.add("title-chaos");
+
+        const started = Date.now();
+        chaosTimer = window.setInterval(function () {
+          const hue = Math.floor(Math.random() * 360);
+          const x = Math.floor(Math.random() * 30) - 15;
+          const y = Math.floor(Math.random() * 24) - 12;
+          const scale = 0.82 + Math.random() * 0.46;
+          const rotate = Math.floor(Math.random() * 24) - 12;
+          const skew = Math.floor(Math.random() * 12) - 6;
+          const shadowX = Math.floor(Math.random() * 14) - 7;
+          const shadowY = Math.floor(Math.random() * 14) - 7;
+          const glow = 6 + Math.floor(Math.random() * 14);
+
+          titleText.style.color = "hsl(" + hue + " 98% 56%)";
+          titleText.style.transform =
+            "translate(" + x + "px," + y + "px) rotate(" + rotate + "deg) scale(" + scale + ") skewX(" + skew + "deg)";
+          titleText.style.textShadow =
+            shadowX + "px " + shadowY + "px 0 rgba(0,0,0,0.45), " +
+            (-shadowX) + "px " + (-shadowY) + "px 0 rgba(255,255,255,0.35), " +
+            "0 0 " + glow + "px hsla(" + hue + " 100% 60% / 0.75)";
+          titleText.style.filter =
+            "saturate(" + (1.2 + Math.random() * 1.4).toFixed(2) + ") contrast(" +
+            (1 + Math.random() * 0.5).toFixed(2) + ") hue-rotate(" + (Math.floor(Math.random() * 60) - 30) + "deg)";
+
+          if (Date.now() - started > chaosDuration) {
+            window.clearInterval(chaosTimer);
+            chaosTimer = null;
+            titleText.classList.remove("title-chaos");
+            titleText.style.color = "";
+            titleText.style.transform = "";
+            titleText.style.textShadow = "";
+            titleText.style.filter = "";
+          }
+        }, 42);
+      }
+
+      function runArtChaos() {
+        if (artChaosTimer) window.clearTimeout(artChaosTimer);
+
+        const existing = document.querySelector(".image-chaos-layer");
+        if (existing) existing.remove();
+
+        const layer = document.createElement("div");
+        layer.className = "image-chaos-layer";
+        document.body.appendChild(layer);
+
+        const viewportWidth = window.innerWidth;
+        const viewportHeight = window.innerHeight;
+        let maxEndTime = 0;
+        const selectedFiles = pickHalfArtFiles(artFiles);
+
+        selectedFiles.forEach(function (file, index) {
+          const img = document.createElement("img");
+          img.className = "chaos-art";
+          img.src = encodeURI(file);
+          img.alt = "";
+
+          const width = 55 + Math.random() * 150;
+          const ratio = 0.65 + Math.random() * 0.8;
+          const height = width * ratio;
+
+          const fromLeft = Math.random() < 0.5;
+          const startX = fromLeft ? -width - 50 - Math.random() * 260 : viewportWidth + 50 + Math.random() * 260;
+          const endX = fromLeft ? viewportWidth + width + 60 + Math.random() * 220 : -width - 60 - Math.random() * 220;
+          const startY = Math.random() * Math.max(1, viewportHeight - height);
+          const endY = startY + (Math.random() * 260 - 130);
+          const duration = 2080 + Math.random() * 2720;
+          const delay = Math.random() * 260 + index * 6;
+          const spin = (Math.random() * 1080 - 540).toFixed(2);
+          const scale = (0.75 + Math.random() * 0.95).toFixed(2);
+          const settledY = Math.max(-height, Math.min(viewportHeight + height, endY));
+
+          img.style.width = width.toFixed(1) + "px";
+          img.style.height = height.toFixed(1) + "px";
+          img.style.transform = "translate(" + startX.toFixed(1) + "px," + startY.toFixed(1) + "px) rotate(0deg) scale(1)";
+          img.style.transition =
+            "transform " + duration.toFixed(0) + "ms cubic-bezier(0.16,0.9,0.2,1), " +
+            "opacity " + (duration * 0.22).toFixed(0) + "ms ease-in";
+
+          layer.appendChild(img);
+
+          window.setTimeout(function () {
+            img.style.opacity = "0.95";
+            img.style.transform =
+              "translate(" + endX.toFixed(1) + "px," + settledY.toFixed(1) + "px) " +
+              "rotate(" + spin + "deg) scale(" + scale + ")";
+          }, delay);
+
+          window.setTimeout(function () {
+            img.style.opacity = "0";
+          }, delay + duration * 0.7);
+
+          window.setTimeout(function () {
+            img.remove();
+          }, delay + duration + 180);
+
+          maxEndTime = Math.max(maxEndTime, delay + duration + 240);
+        });
+
+        artChaosTimer = window.setTimeout(function () {
+          layer.remove();
+          artChaosTimer = null;
+        }, maxEndTime + 50);
+
+        return maxEndTime + 50;
+      }
+
+      macImage.addEventListener("click", function (event) {
+        const insideMouseArea = isInMouseHotspot(event.clientX, event.clientY);
+
+        if (insideMouseArea) {
+          const artDuration = runArtChaos();
+          runTitleChaos(artDuration * 0.25);
+        }
+      });
+
+      macImage.addEventListener("mousemove", function (event) {
+        macImage.style.cursor = isInMouseHotspot(event.clientX, event.clientY) ? "pointer" : "default";
+      });
+
+      macImage.addEventListener("mouseleave", function () {
+        macImage.style.cursor = "default";
+      });
+    })();
+  </script>
+      
+  
+</body> 
+    
+</html>       

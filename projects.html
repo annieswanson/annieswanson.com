@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    
+    <link rel="stylesheet" href="style.css">
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="script.js"></script>
+    
+    <style>
+
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+       
+        @font-face {
+   font-family: "DIN Next LT Pro";
+    src:  url("din-next-lt-pro-bold-condensed.otf") format("opentype"),
+        url("din-next-lt-pro-bold-condensed.woff2") format("woff2"),
+         url("din-next-lt-pro-bold-condensed.woff") format("woff"),
+         url("din-next-lt-pro-bold-condensed.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height:100vh;
+height:100%;
+  display:flex;
+  flex-direction:column;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+  .content {
+  flex:1;
+}
+        
+  h1 {font-family:"DIN Next LT Pro", Times, serif;
+            font-weight: 2000;
+            font-size: 70px;
+            line-height: 50px;
+        }
+        
+        
+        nav {font-family:"DIN Next LT Pro", sans-serif;
+        }
+        
+        .right-image { 
+            float: right; 
+        } 
+        
+        .left-image {
+            float:left;
+        }
+        
+        .grid-container {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 12px;
+
+  padding-top: 120px;
+}
+
+
+.grid-item {
+
+  position: relative;
+
+  aspect-ratio: 4 / 3;
+
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  padding: 15px;
+  box-sizing: border-box;
+
+  font-size: 14px;
+  text-align: left;
+}
+
+
+
+.grid-item img {
+
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
+
+.grid-item:not(:has(img)) {
+  background: white;
+}
+        
+        
+            .fixed-image {
+    position: fixed;
+    width: 130px;
+    height:auto;
+    z-index: 1000; 
+        }  
+
+
+      .site-footer {
+  position: relative;
+  padding-top: 100px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.footer-bg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.footer-content {
+  position: absolute;
+
+  bottom: 20px; 
+  left: 15px;
+  right: 15px;
+
+  text-align: center;
+
+  font-size: clamp(12px, 2vw, 18px);
+
+  line-height: 1.2;
+}
+
+    
+
+
+@media (max-width: 900px) {
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+@media (max-width: 500px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+        
+    </style>
+    
+
+    
+    </head>
+ <body>
+     
+  
+    <section>
+       
+       <h1>
+        <ul>
+            <li style="display:inline">ANNIE SWANSON</li>
+        </ul>
+       </h1>
+        
+    </section>
+     
+  
+    
+    <div class="content">
+    <section>
+        
+          <a href="index.html"><img src="hello.png" alt="Hello" class="fixed-image"></a>
+        
+    </section>
+    
+  
+   
+     <div class="grid-container">
+        
+ <div class="grid-item">RUKS.ORG is the most comprehensive catalog of creative talent in existence. It exists to route work opportunities to designers and artists.<a href="https://www.ruks.org"><span style="color:blue;">ruks.org</span></a></div>
+         <div class="grid-item"><img src="og.jpg" alt="ruks flowers" width=100%></div>
+          <div class="grid-item"><img src="preview.jpg" alt="Preview" width=100%></div>
+
+        
+        <div class="grid-item">POSTSCRIPT is an ecosystem for human artists to monetize their work, connecting them with designers and developers of tech products for implementation of art into apps and websites. Check out the Figma Plugin, <a href="https://www.figma.com/community/plugin/1445806484052391914/human-art-source"><span style="color:blue;">Human Art Source.</span></a> </div>
+        <div class="grid-item"><img  src="postscript.jpg"  alt="Postscript" width=100%></div>
+          <div class="grid-item"><img src="plugin.jpg" alt="Plugin" width=100%></div>
+
+          <div class="grid-item">STAINED GLASS WEBSITE is a digital stained glass window that allows you to look through it. <a href="https://annieswanson.github.io/stainedglasswebsite/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnyYgz9eot3WAjY17NRWeYZnd46bSSMkpoAKpDuk-puv9XTC8B6S05XwLnSwk_aem_sNxfHIfdarVQssA_o6GIaw"><span style="color:blue;">Stained Glass Website</span></a> </div>
+        <div class="grid-item grid-item-1"><img  src="sgw.jpg"  alt="Sgw" width=100%></div><div class="grid-item"></div>
+
+        
+
+         <div class="grid-item">PHEIDIPPIDES RUN CLUB was an interactive, exclusive run club in New York City powered by NFTs. Built in 2022 when NFTs were a thing. The idea was to bring community, exclusivity, and discovery to New York runners. </div>
+         <div class="grid-item"><img src="runner.jpg" alt="Runner" width=100%></div>
+          <div class="grid-item"><img src="shoe.jpg" alt="Shoe" width=100%></div>
+    
+         
+         <div class="grid-item">GALLATIN COLLOQUIUM - Created an academic concentration in technology, entrepreneurship, and art. Studied the way in which innovations at this intersection are lowering the barrier of entry to creation and conversely having adverse effects on our societies and minds. Investigated how creativity can be harnessed to build new technology in a way that has a positive impact on the world.
+         <a href="https://docs.google.com/document/d/1qmIzK_f8CgfSTkNSresGUf1TEzfEw6WxESaf_yoqmYg/edit?usp=sharing"><span style="color:blue;">Notes.</span></a></div>
+         <div class="grid-item grid-item-1"><img src="colloquium.jpg" alt="Colloquium" width=100%></div><div class="grid-item"></div>
+        
+        
+         <div  class="grid-item"><p>CABINET is a marketplace for tastemakers and collectors to digitally curate their treasures, engage with niche communities and buy and sell objects through an app powered by AI image sorting and high-accuracy 3D scanning. Inspired by German 16th and 17th century <a href="https://en.wikipedia.org/wiki/Cabinet_of_curiosities">Cabinets of Curiosities</a>.</p> </div>
+         <div class="grid-item"><img src="curiosities.jpg" alt="Curiosities" ></div>
+         <div class="grid-item"><img src="profile.png" alt="Profile" ></div>
+    
+         
+          <div class="grid-item">OUTREACH ANALYSIS - In my sales job, I analyzed extensive data from my teams email outreach over the last year to understand which tactics were working best and which ones were not working as well. I looked at the most successful emails/ cadences and our most common objections to make recommendations that optimized our efforts. </div>
+          <div class="grid-item"><img src="sankey.jpg" alt="Sankey" ></div>
+        <div class="grid-item"><img src="pies.jpg" alt="Pies" ></div>
+         
+          <div class="grid-item">PLEXUS - Advised on product design and functionality for a connections platform powered by AI. Collaborated with 7 other fellows to test, iterate on and imagine possibilities for Plexus. </div>
+          <div class="grid-item grid-item-1"><img src="plexus.jpg" alt="Plexus" width=100%></div><div class="grid-item"></div>
+         
+         
+        
+         <div class="grid-item">BANMA is a custom sneakers company, personalized for each customer. I built the website, order form, payment platform, business operations, brand identity, and social media marketing campaigns. >$10,000 profit on $80 initial investment.
+             <br> 
+             <a href="https://www.banmasneakers.com/"><span style="color:red;">banmasneakers.com</span></a>
+         </div>
+         
+        <div class="grid-item"><img src="zebra.png" alt="Zebra" ></div>
+        <div class="grid-item"><img src="Muhammad.png" alt="Muhammad"></div>
+         
+         
+         <div class="grid-item">VARIOUS PRODUCTS - Created in a human-centered product design studio. I identified problems, conducted user research, made low-fi and higher-fi 3D printed prototypes, tested products, and planned for manufacturing. Developed skills in 3D modeling, interviewing, and pitching products. Pictured here: A lunchbox backpack designed as an alternative to disposable containers and a coffee cup designed for the habits of one coffee drinker, Maureen. </div>
+         <div class="grid-item"><img src="cup.jpg" alt="Cup" ></div>
+        <div class="grid-item"><img src="demo.jpg" alt="Demo" ></div>
+         
+         <div class="grid-item"><a href="https://www.instagram.com/usacoolfacts/">USA COOL FACTS</a> is an instagram account that posts 100% true, almost unbeleiveable facts.</div>
+         <div class="grid-item grid-item-1"><img src="usacoolfacts.jpg" alt="USACoolFacts" width=100%></div><div class="grid-item"></div>
+
+         
+         <div class="grid-item">MURAL - Was selected to design and execute a mural on the exterior wall of a local jewlery shop in my home town. "wo bu zhidao" = "I don't know"</div>
+         <div class="grid-item"><img src="ladder.jpg" alt="Ladder" ></div>
+         <div class="grid-item"><img src="mural.jpg" alt="Mural" ></div>
+         
+         <div class="grid-item">THIS WEBSITE - Coded this website from scratch. It is a work in progress. Please don't view it on mobile. Viewing this website on mobile is not allowed right now because I am a bad web developer! </div>
+         <div class="grid-item grid-item-1"><img src="code.jpg" alt="Code" width=100%></div><div class="grid-item"></div>
+        
+         
+        
+    </div>
+    
+
+    
+    </div>
+
+     
+    
+   <footer class="site-footer">
+
+  <img src="3flowers.png" class="footer-bg" alt="3flowers">
+
+  <div class="footer-content">
+    annieswanson.com (You are here.)
+  </div>
+
+</footer>
+
+    
+     </body>
+</html>
