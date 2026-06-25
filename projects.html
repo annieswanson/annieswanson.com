@@ -95,12 +95,17 @@ body {
   text-align: left;
 }
 
-        .grid-item video {
-      width: 100%;
-      height: auto;
-      display: block;
-        aspect-ratio: 3 / 4;
-      overflow: hidden;
+    .grid-item.video-item {
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+
+.grid-item.video-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 
@@ -208,8 +213,8 @@ body {
      <div class="grid-container">
 
          <div class="grid-item">ON THE RECORD WITH ROGER MONDRANE is a narrative short film made by the Storytelling Studio, JoCo., celebrating the AI headhunter, Superposition. I produced the film premiere at Betaworks.<a href="https://www.youtube.com/watch?v=ZRHlcq6L8XE"><span style="color:blue;">Watch the film.</span></a></div>
-         <div class="grid-item">  <video src="photos.mp4" autoplay muted loop playsinline></video></div>
-        <div class="grid-item"> <video src="reel.mp4" autoplay muted loop playsinline></video></div>
+         <div class="grid-item video-item"> <video src="photos.mp4" autoplay muted loop playsinline></video> </div>
+        <div class="grid-item video-item"> <video src="reel.mp4" autoplay muted loop playsinline></video> </div>
          
         
  <div class="grid-item">RUKS.ORG is the most comprehensive catalog of creative talent in existence. It exists to route work opportunities to designers and artists.<a href="https://www.ruks.org"><span style="color:blue;">ruks.org</span></a></div>
