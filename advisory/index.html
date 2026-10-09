@@ -9,9 +9,10 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://annieswanson.com/advisory/">
     <title>Annie Swanson, Art Advisor</title>
-    <link rel="stylesheet" href="styles.css?v=20261009-larger-art">
+    <link rel="stylesheet" href="styles.css?v=20261009-work-view">
     <script src="carousel.js?v=20261009-captions" defer></script>
     <script src="intake.js" defer></script>
+    <script src="works.js" defer></script>
   </head>
   <body>
     <main class="page-shell">
@@ -78,18 +79,18 @@
         <h2 id="works-heading" class="section-heading">Works in View</h2>
 
         <div class="works-gallery">
-          <img src="assets/work-01.webp" alt="Abstract artwork with red, violet, green, and blue fields">
-          <img src="assets/work-02.webp" alt="Green segmented sculptural work">
-          <img src="assets/work-03.webp" alt="Yellow and blue abstract painting installed on a wall">
-          <img src="assets/work-04.webp" alt="Blue artwork with a grid of translucent circular forms">
-          <img src="assets/work-05.webp" alt="Brown and cream abstract work in a translucent frame">
-          <img src="assets/work-06.webp" alt="Eight small arched sculptural panels">
-          <img src="assets/work-07.webp" alt="Green and orange abstract painting">
-          <img src="assets/work-08.webp" alt="Silver and blue sculptural work">
-          <img src="assets/work-09.webp" alt="Tall mixed-media artwork with a dark circular center">
-          <img src="assets/work-10.webp" alt="Monochrome geometric drawing">
-          <img src="assets/work-11.webp" alt="Dark framed artwork with a horizontal red light">
-          <img src="assets/work-12.webp" alt="Small sculptural work installed on a white wall">
+          <button type="button" class="work-thumbnail" data-work-index="0" aria-haspopup="dialog" aria-controls="work-view" aria-label="View artwork by Michael Kennedy Costa"><img src="assets/work-01.webp" alt="Abstract artwork with red, violet, green, and blue fields"></button>
+          <button type="button" class="work-thumbnail" data-work-index="1" aria-haspopup="dialog" aria-controls="work-view" aria-label="View artwork by Amber Toplisek"><img src="assets/work-02.webp" alt="Green segmented sculptural work"></button>
+          <button type="button" class="work-thumbnail" data-work-index="2" aria-haspopup="dialog" aria-controls="work-view" aria-label="View artwork by Mads Bryld"><img src="assets/work-03.webp" alt="Yellow and blue abstract painting installed on a wall"></button>
+          <button type="button" class="work-thumbnail" data-work-index="3" aria-haspopup="dialog" aria-controls="work-view" aria-label="View artwork by Nat Ware"><img src="assets/work-04.webp" alt="Blue artwork with a grid of translucent circular forms"></button>
+          <button type="button" class="work-thumbnail" data-work-index="4" aria-haspopup="dialog" aria-controls="work-view" aria-label="View artwork by m. gloxinia lyra"><img src="assets/work-05.webp" alt="Brown and cream abstract work in a translucent frame"></button>
+          <button type="button" class="work-thumbnail" data-work-index="5" aria-haspopup="dialog" aria-controls="work-view" aria-label="View artwork by hailey scheff"><img src="assets/work-06.webp" alt="Eight small arched sculptural panels"></button>
+          <button type="button" class="work-thumbnail" data-work-index="6" aria-haspopup="dialog" aria-controls="work-view" aria-label="View artwork by noah a schmitz"><img src="assets/work-07.webp" alt="Green and orange abstract painting"></button>
+          <button type="button" class="work-thumbnail" data-work-index="7" aria-haspopup="dialog" aria-controls="work-view" aria-label="View artwork by omar abreu"><img src="assets/work-08.webp" alt="Silver and blue sculptural work"></button>
+          <button type="button" class="work-thumbnail" data-work-index="8" aria-haspopup="dialog" aria-controls="work-view" aria-label="View artwork by Tatiana Kronberg"><img src="assets/work-09.webp" alt="Tall mixed-media artwork with a dark circular center"></button>
+          <button type="button" class="work-thumbnail" data-work-index="9" aria-haspopup="dialog" aria-controls="work-view" aria-label="View artwork by elliot dickinson wright"><img src="assets/work-10.webp" alt="Monochrome geometric drawing"></button>
+          <button type="button" class="work-thumbnail" data-work-index="10" aria-haspopup="dialog" aria-controls="work-view" aria-label="View artwork by eduardo joaquin"><img src="assets/work-11.webp" alt="Dark framed artwork with a horizontal red light"></button>
+          <button type="button" class="work-thumbnail" data-work-index="11" aria-haspopup="dialog" aria-controls="work-view" aria-label="View artwork by Anna de Castro Barbosa"><img src="assets/work-12.webp" alt="Small sculptural work installed on a white wall"></button>
         </div>
       </section>
 
@@ -139,6 +140,17 @@
         <textarea id="intake-9" name="Anything else" rows="3"></textarea>
         <button class="intake-submit" type="submit">Submit</button>
       </form>
+    </dialog>
+    <dialog id="work-view" class="work-view" aria-labelledby="work-view-artist">
+      <button type="button" class="work-view-close" aria-label="Close artwork">×</button>
+      <div class="work-view-layout">
+        <img class="work-view-image" alt="">
+        <div class="work-view-caption">
+          <h2 id="work-view-artist"></h2>
+          <p class="work-view-title"></p>
+          <p class="work-view-details"></p>
+        </div>
+      </div>
     </dialog>
   </body>
 </html>
