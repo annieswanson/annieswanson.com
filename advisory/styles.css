@@ -170,7 +170,7 @@ button {
 }
 
 .intro {
-  margin-top: clamp(-42px, -2.6vw, -22px);
+  margin-top: 40px;
 }
 
 .prose {
