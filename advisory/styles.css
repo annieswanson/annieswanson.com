@@ -93,8 +93,8 @@ button {
 
 .carousel {
   display: grid;
-  grid-column: 3 / 5;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-column: 3 / 6;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1.75fr);
   column-gap: var(--grid-gap);
   outline: none;
 }
@@ -102,7 +102,7 @@ button {
 .carousel-stage {
   display: flex;
   grid-column: 1;
-  height: clamp(330px, 29vw, 445px);
+  height: clamp(380px, 34vw, 520px);
   align-items: center;
   justify-content: center;
 }
@@ -258,7 +258,7 @@ button {
   column-gap: var(--grid-gap);
   row-gap: clamp(98px, 9vw, 145px);
   align-items: start;
-  margin-top: clamp(145px, 12vw, 190px);
+  margin-top: clamp(48px, 5vw, 72px);
 }
 
 .works-gallery img {
@@ -321,12 +321,12 @@ button {
   }
 
   .carousel-stage {
-    height: min(112vw, 470px);
+    height: min(130vw, 540px);
   }
 
   .carousel-image {
     width: auto;
-    max-width: 88%;
+    max-width: 100%;
   }
 
   .carousel-caption {
@@ -389,7 +389,7 @@ button {
     display: grid;
     grid-template-columns: 1fr;
     row-gap: 78px;
-    margin-top: 92px;
+    margin-top: 40px;
   }
 
   .bio {
@@ -501,3 +501,5 @@ body.intake-open { overflow: hidden; }
   display: none !important;
   pointer-events: none;
 }
+
+.carousel-caption .artwork-title { white-space: nowrap; }
