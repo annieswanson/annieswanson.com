@@ -337,16 +337,16 @@ button {
   }
 
   .carousel-controls {
-    grid-row: 2;
+    grid-row: 3;
     margin-top: 10px;
   }
 
   .hero-intake {
-    grid-row: 3;
+    grid-row: 4;
   }
 
   .carousel-caption {
-    grid-row: 4;
+    grid-row: 2;
   }
 
   .intro {
