@@ -84,10 +84,9 @@ button {
 }
 
 .hero-intake {
-  grid-column: 1 / -1;
+  grid-column: 1;
   justify-self: center;
-  align-self: start;
-  margin-bottom: 36px;
+  margin-top: 24px;
   text-align: center;
   white-space: nowrap;
 }
@@ -308,11 +307,6 @@ button {
   .hero {
     min-height: 0;
     padding-top: 92px;
-  }
-
-  .hero-intake {
-    display: block;
-    margin-bottom: 72px;
   }
 
   .carousel {
