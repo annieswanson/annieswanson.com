@@ -93,8 +93,8 @@ button {
 
 .carousel {
   display: grid;
-  grid-column: 3 / 6;
-  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1.75fr);
+  grid-column: 3 / 5;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
   column-gap: var(--grid-gap);
   outline: none;
 }
@@ -115,6 +115,8 @@ button {
 
 .carousel-caption {
   grid-column: 2;
+  min-width: 0;
+  overflow-wrap: break-word;
   align-self: center;
   padding-left: clamp(8px, 1vw, 16px);
   font-size: clamp(16px, 1.15vw, 18px);
@@ -502,7 +504,7 @@ body.intake-open { overflow: hidden; }
   pointer-events: none;
 }
 
-.carousel-caption .artwork-title { white-space: nowrap; }
+.carousel-caption .artwork-title { white-space: normal; }
 
 /* Enlarged Works in View */
 .work-thumbnail {
