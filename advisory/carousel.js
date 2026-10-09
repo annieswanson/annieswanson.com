@@ -24,7 +24,7 @@ const slides = [
     alt: "motherhood, and a drawn scythe: chapter five by Umico Niwa",
     caption: `
       <p>Umico Niwa</p>
-      <p><i>motherhood, and a drawn&nbsp;scythe:<br>chapter five</i>, 2026</p>
+      <p><i>motherhood, and a drawn&nbsp;scythe:&nbsp;chapter five</i>, 2026</p>
       <p>maple, matboard, graphite, charcoal, colored pencil on paper with acrylic</p>
       <p>21 x 83 x 1 1/2 inches</p>
     `,
