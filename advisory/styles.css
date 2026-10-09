@@ -566,3 +566,10 @@ body.work-view-open { overflow: hidden; }
   .work-view-layout { grid-template-columns: minmax(0, 1fr); gap: 24px; }
   .work-view-image { height: auto; max-height: 60dvh; }
 }
+
+@media (min-width: 701px) {
+  .carousel-image[src$="carousel-03.webp"] {
+    transform: scale(1.12);
+    transform-origin: right center;
+  }
+}
