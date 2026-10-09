@@ -4,7 +4,7 @@ const slides = [
     alt: "Quiet Appreciation, Amber by Baseera Khan",
     caption: `
       <p>Baseera Khan</p>
-      <p><i>Quiet Appreciation,<br>Amber</i></p>
+      <p><i class="artwork-title">Quiet Appreciation, Amber</i></p>
       <p>oil on marouflaged wood<br>panel, Lucite artist frame</p>
       <p>14 x 11 x 1.5 inches</p>
     `,
@@ -25,7 +25,7 @@ const slides = [
     caption: `
       <p>Umico Niwa</p>
       <p><i>motherhood, and a drawn scythe:<br>chapter five</i>, 2026</p>
-      <p>maple, matboard, graphite, charcoal,<br>colored pencil on paper with acrylic</p>
+      <p>maple, matboard, graphite, charcoal, colored pencil on paper with acrylic</p>
       <p>21 x 83 x 1 1/2 inches</p>
     `,
   },
