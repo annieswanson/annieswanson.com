@@ -203,16 +203,17 @@ button {
 .project-gallery {
   display: grid;
   grid-column: 2 / 5;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: 0.8fr 1.2fr;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  grid-template-rows: auto 1fr;
+  align-items: start;
   gap: var(--grid-gap);
   margin-top: clamp(42px, 4.5vw, 68px);
 }
 
 .project-gallery img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
 }
 
 .project-main {
