@@ -434,7 +434,7 @@ body.intake-open { overflow: hidden; }
   overscroll-behavior: contain;
 }
 .intake-dialog::backdrop { background: rgb(0 0 0 / 18%); }
-.intake-dialog h2 { margin: 0 40px 24px 0; font: inherit; font-size: 26px; }
+.intake-dialog h2 { margin: 0 40px 24px 0; font: inherit; font-style: italic; text-transform: uppercase; }
 .intake-dialog p { margin: 0 0 36px; }
 .intake-close {
   position: absolute;
@@ -455,16 +455,23 @@ body.intake-open { overflow: hidden; }
   width: 100%;
   min-width: 0;
   margin: 0 0 30px;
-  padding: 10px 12px;
-  border: 1px solid #ccc;
+  padding: 0;
+  border: 0;
+  outline: none;
+  box-shadow: none;
+  caret-color: var(--ink);
   border-radius: 0;
   background: #fff;
   color: inherit;
   font: inherit;
   line-height: 1.4;
 }
-.intake-dialog textarea { resize: vertical; min-height: 90px; }
-.intake-dialog :focus-visible { outline: 1px solid #100a08; outline-offset: 3px; }
+.intake-dialog textarea { resize: none; min-height: 90px; }
+.intake-dialog input:focus-visible,
+.intake-dialog textarea:focus-visible,
+.intake-close:focus { outline: none; box-shadow: none; }
+.intake-close:focus-visible { text-decoration: underline; text-underline-offset: 4px; }
+.intake-submit:focus-visible { outline: 1px solid currentColor; outline-offset: 3px; }
 .intake-honeypot { display: none; }
 .intake-submit {
   border: 0;
