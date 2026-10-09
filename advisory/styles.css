@@ -483,3 +483,15 @@ body.intake-open { overflow: hidden; }
 @media (max-width: 700px) {
   .intake-dialog { width: calc(100vw - 32px); padding: 28px 22px; }
 }
+
+/* Keep the intake scrollable without visible scrollbars. */
+.intake-dialog,
+.intake-dialog textarea {
+  scrollbar-width: none;
+}
+.intake-dialog::-webkit-scrollbar,
+.intake-dialog textarea::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
