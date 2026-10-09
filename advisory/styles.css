@@ -84,8 +84,11 @@ button {
 }
 
 .hero-intake {
-  grid-column: 1;
+  grid-column: 1 / -1;
+  justify-self: center;
   align-self: start;
+  margin-bottom: 36px;
+  text-align: center;
   white-space: nowrap;
 }
 
@@ -308,7 +311,7 @@ button {
   }
 
   .hero-intake {
-    display: inline-block;
+    display: block;
     margin-bottom: 72px;
   }
 
