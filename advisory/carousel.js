@@ -56,16 +56,17 @@ if (carousel) {
   previous.addEventListener("click", () => move(-1));
   next.addEventListener("click", () => move(1));
 
-  carousel.addEventListener("keydown", (event) => {
-    if (event.key === "ArrowLeft") {
-      event.preventDefault();
-      move(-1);
-    }
-
-    if (event.key === "ArrowRight") {
-      event.preventDefault();
-      move(1);
-    }
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+    if (event.defaultPrevented || event.isComposing ||
+        event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+    if (document.querySelector("dialog[open]")) return;
+    const target = event.target;
+    if (target instanceof Element &&
+        (target.closest("input, textarea, select, [role='textbox']") ||
+         target.isContentEditable)) return;
+    event.preventDefault();
+    move(event.key === "ArrowLeft" ? -1 : 1);
   });
 
   carousel.addEventListener(
