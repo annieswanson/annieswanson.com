@@ -141,6 +141,24 @@ button {
   line-height: 1;
 }
 
+.carousel-controls button span {
+  display: block;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  line-height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+}
+
+.carousel-controls [data-carousel-previous] span {
+  border-right: 9px solid #000;
+}
+
+.carousel-controls [data-carousel-next] span {
+  border-left: 9px solid #000;
+}
+
 .carousel-controls button:focus-visible,
 .intake-link:focus-visible {
   outline: 1px solid currentColor;
