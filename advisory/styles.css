@@ -495,3 +495,9 @@ body.intake-open { overflow: hidden; }
   width: 0;
   height: 0;
 }
+
+#intake-name::-webkit-contacts-auto-fill-button {
+  visibility: hidden;
+  display: none !important;
+  pointer-events: none;
+}
