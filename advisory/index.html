@@ -9,7 +9,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://annieswanson.com/advisory/">
     <title>Annie Swanson, Art Advisor</title>
-    <link rel="stylesheet" href="styles.css?v=20261009-intake-form">
+    <link rel="stylesheet" href="styles.css?v=20261009-intake-minimal">
     <script src="carousel.js" defer></script>
     <script src="intake.js" defer></script>
   </head>
@@ -106,16 +106,15 @@
       </section>
     </main>
   
-    <dialog class="intake-dialog" id="client-intake" aria-labelledby="intake-title" aria-describedby="intake-description">
+    <dialog class="intake-dialog" id="client-intake" aria-labelledby="intake-title">
       <button type="button" class="intake-close" aria-label="Close client intake">×</button>
       <h2 id="intake-title">Client Intake</h2>
-      <p id="intake-description">Please answer these questions about the pieces you’re hoping to collect.</p>
       <form action="https://formsubmit.co/annie.swanson@gmail.com" method="POST">
         <input type="hidden" name="_subject" value="New Client Intake — Annie Swanson Art Advisory">
         <input type="hidden" name="_template" value="table">
         <input type="text" name="_honey" class="intake-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
         <label for="intake-name">Name</label>
-        <input id="intake-name" name="name" autocomplete="name" required>
+        <input id="intake-name" name="name" autocomplete="name" required autofocus>
         <label for="intake-email">Email</label>
         <input id="intake-email" type="email" name="email" autocomplete="email" required>
         <label for="intake-0">References — Are there any works, artists, or types of art that you are particularly drawn to? Anything you don’t like?</label>
@@ -129,7 +128,7 @@
         <label for="intake-4">Palette — Are you looking for works of a specific color palette?</label>
         <textarea id="intake-4" name="Palette" rows="3"></textarea>
         <label for="intake-5">Space — What does your space look like? What are the dimensions or space you could fill? How many works are you looking for? (Photos are helpful.)</label>
-        <textarea id="intake-5" name="Space" rows="3" placeholder="You can include links to photos of your space."></textarea>
+        <textarea id="intake-5" name="Space" rows="3"></textarea>
         <label for="intake-6">Budget — What is your budget?</label>
         <textarea id="intake-6" name="Budget" rows="3"></textarea>
         <label for="intake-7">Value — Are you looking for works that will likely accrue in value?</label>
