@@ -86,7 +86,7 @@ button {
 .hero-intake {
   grid-column: 1;
   justify-self: center;
-  margin-top: 40px;
+  margin-top: 56px;
   text-align: center;
   white-space: nowrap;
 }
@@ -130,7 +130,7 @@ button {
   grid-column: 1;
   justify-content: center;
   gap: 1px;
-  margin-top: 18px;
+  margin-top: 10px;
 }
 
 .carousel-controls button {
@@ -336,7 +336,7 @@ button {
 
   .carousel-controls {
     grid-row: 2;
-    margin-top: 18px;
+    margin-top: 10px;
   }
 
   .hero-intake {
