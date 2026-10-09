@@ -409,3 +409,70 @@ button {
     scroll-behavior: auto !important;
   }
 }
+
+/* Client intake modal */
+button.intake-link {
+  padding: 0;
+  border: 0;
+  background: none;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.08em;
+  cursor: pointer;
+}
+.footer-intake { justify-self: start; }
+body.intake-open { overflow: hidden; }
+.intake-dialog {
+  width: min(calc(60vw - 24px), 900px);
+  max-width: calc(100vw - 32px);
+  max-height: calc(100dvh - 48px);
+  padding: clamp(24px, 4vw, 56px);
+  border: 0;
+  background: #fff;
+  color: var(--ink);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.intake-dialog::backdrop { background: rgb(0 0 0 / 18%); }
+.intake-dialog h2 { margin: 0 40px 24px 0; font: inherit; font-size: 26px; }
+.intake-dialog p { margin: 0 0 36px; }
+.intake-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  background: #fff;
+  font-size: 30px;
+  cursor: pointer;
+}
+.intake-dialog label { display: block; margin-bottom: 12px; }
+.intake-dialog input:not([type="hidden"]):not(.intake-honeypot),
+.intake-dialog textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  margin: 0 0 30px;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 0;
+  background: #fff;
+  color: inherit;
+  font: inherit;
+  line-height: 1.4;
+}
+.intake-dialog textarea { resize: vertical; min-height: 90px; }
+.intake-dialog :focus-visible { outline: 1px solid #100a08; outline-offset: 3px; }
+.intake-honeypot { display: none; }
+.intake-submit {
+  border: 0;
+  padding: 10px 0;
+  background: none;
+  text-decoration: underline;
+  cursor: pointer;
+}
+@media (max-width: 700px) {
+  .intake-dialog { width: calc(100vw - 32px); padding: 28px 22px; }
+}
