@@ -130,7 +130,7 @@ button {
   grid-column: 1;
   justify-content: center;
   gap: 1px;
-  margin-top: clamp(76px, 7vw, 110px);
+  margin-top: 18px;
 }
 
 .carousel-controls button {
@@ -335,7 +335,16 @@ button {
   }
 
   .carousel-controls {
-    margin-top: 34px;
+    grid-row: 2;
+    margin-top: 18px;
+  }
+
+  .hero-intake {
+    grid-row: 3;
+  }
+
+  .carousel-caption {
+    grid-row: 4;
   }
 
   .intro {
